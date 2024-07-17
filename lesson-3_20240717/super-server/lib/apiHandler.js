@@ -16,7 +16,8 @@ const customers = [
     { id: 9, name: 'William Garcia', address: '666 Pine St, Hamletville', balance: 1750.10 },
     { id: 10, name: 'Mary Hernandez', address: '777 Elm St, Countryside', balance: 900.45 }];
 
-const server =http.createServer((request,response) => {
+//const server =http.createServer((request,response) => {
+    const handleApiRequest = (request,response) => {
     //API stucture
     //  /api/v1/customers GET
     //  /api/v1/customers/{id} - GET {one}
@@ -96,9 +97,6 @@ const server =http.createServer((request,response) => {
  //       response.end('API not found');
  //   }
 
-});
+};
 
-
-//starting the server 
-const PORT = 3006;
-server.listen(PORT,() =>{console.log(`server is running on port http://localhost:${PORT}`)});
+module.exports = { handleApiRequest };
